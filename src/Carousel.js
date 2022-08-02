@@ -43,7 +43,7 @@ Carousel.defaultProps = {
 		},
 		{
 			src: image3,
-			caption: 'Photo by Josh Post on Unsplash'
+			caption: 'Photo by istock on Unsplash'
 		},
 		{
 			src: image4,
