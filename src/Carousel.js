@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './Carousel.css';
 import image1 from './image1.jpg';
 import image2 from './image2.jpg';
-import image3 from './image3.jpg';
+import image3 from './new-image3.jpg';
+import image4 from './image4.jpg';
 import Card from './Card';
 
 function Carousel(props) {
@@ -12,7 +13,7 @@ function Carousel(props) {
 	const goForward = () => setCardIdx(cardIdx + 1);
 	const goBackward = () => setCardIdx(cardIdx - 1);
 	const isOne = cardIdx + 1 === 1;
-	const isThree = cardIdx + 1 === 3;
+	const isEnd = cardIdx + 1 === total;
 
 	return (
 		<div className="Carousel">
@@ -22,7 +23,7 @@ function Carousel(props) {
 					<i className="fas fa-chevron-circle-left fa-2x" onClick={goBackward} data-testid="left-arrow" />
 				)}
 				<Card caption={card.caption} src={card.src} currNum={cardIdx + 1} totalNum={total} />
-				{isThree ? null : (
+				{isEnd ? null : (
 					<i className="fas fa-chevron-circle-right fa-2x" onClick={goForward} data-testid="right-arrow" />
 				)}
 			</div>
@@ -43,6 +44,10 @@ Carousel.defaultProps = {
 		{
 			src: image3,
 			caption: 'Photo by Josh Post on Unsplash'
+		},
+		{
+			src: image4,
+			caption: 'Photo by istock photo on Unsplash'
 		}
 	],
 	title: 'Shells from far away beaches.'
